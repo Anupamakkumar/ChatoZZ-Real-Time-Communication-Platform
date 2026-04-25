@@ -1,0 +1,242 @@
+:root {
+  /* Dark Theme Colors */
+  --bg-main: #0b141a;
+  --bg-sidebar: #111b21;
+  --bg-topbar: #202c33;
+  --text-color: #e9edef;
+  --input-bg: #2a3942;
+  --primary: #00a884;
+}
+
+.light-theme {
+  --bg-main: #f0f2f5;
+  --bg-sidebar: #ffffff;
+  --bg-topbar: #ededed;
+  --text-color: #3b4a54;
+  --input-bg: #ffffff;
+  --primary: #008069;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Helvetica, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-color);
+  transition: background 0.3s ease;
+}
+
+.topbar {
+  height: 55px;
+  background: var(--bg-topbar);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* THEME BUTTON */
+.theme-btn {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  color: var(--text-color);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.theme-btn:hover { transform: scale(1.05); }
+
+.main {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  height: calc(100vh - 55px);
+  overflow: hidden; /* Prevents unwanted scrollbars */ [cite: 4, 5]
+}
+
+/* CENTER COLUMN - This is the wrapper for your panels */
+.center {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.center .home {
+  margin: auto;
+}
+
+/* Ensure buttons within the group are aligned properly */
+.btn-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center; [cite: 11]
+}
+
+.btn-group button {
+  flex: 1; /* Makes both buttons equal width */ [cite: 12, 13]
+  min-width: 120px;
+}
+
+/* Input styling for better visibility */
+input {
+  width: 100%;
+  box-sizing: border-box; /* Fixes input overflow issues */ 
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--input-bg);
+  color: var(--text-color); [cite: 9, 10]
+}
+
+.rooms, .users {
+  background: var(--bg-sidebar);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* BOXES & BUTTONS */
+.home {
+  margin: auto;
+  width: 380px;
+  background: var(--bg-topbar);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* CHAT INPUT BAR */
+.input-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: var(--bg-topbar);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* INPUT FIELD */
+.input-area input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* INPUT FOCUS */
+.input-area input:focus {
+  box-shadow: 0 0 0 2px rgba(0,168,132,0.4);
+}
+
+/* SEND BUTTON */
+.input-area button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* HOVER */
+.input-area button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,168,132,0.4);
+}
+
+/* CLICK */
+.input-area button:active {
+  transform: scale(0.95);
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* CHAT HEADER FIX */
+.chat-header {
+  display: flex;
+  justify-content: space-between; /* THIS fixes alignment */
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-topbar);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ROOM NAME */
+#roomTitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* LEAVE BUTTON */
+.leave-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* HOVER */
+.leave-btn:hover {
+  background: #c0392b;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 65%;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.sent { align-self: flex-end; background: #005c4b; color: white; }
+.received { align-self: flex-start; background: var(--bg-topbar); }
+
+.hidden {
+  display: none !important;
+}

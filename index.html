@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatozz - Professional Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme"> <div class="topbar">
+  <div>Chatozz</div>
+  <button id="themeToggle" class="theme-btn" onclick="toggleTheme()">🌙 Mode</button>
+</div>
+
+<div class="main">
+  <div class="rooms">
+    <h3>Rooms</h3>
+    <ul id="roomList"></ul>
+  </div>
+
+  <div class="center">
+    <div id="userPanel" class="home">
+      <h2>Identify Yourself</h2>
+      <input id="userNameInput" placeholder="What's your name?">
+      <button class="primary-btn" onclick="setDisplayName()">Continue</button>
+    </div>
+
+    <div id="homePanel" class="home hidden">
+      <h2 id="welcomeText">Welcome to Chatozz</h2>
+      <input id="roomName" placeholder="Room name">
+      <input id="roomPass" type="password" placeholder="Password">
+      <div class="btn-group">
+        <button class="primary-btn" onclick="createRoom()">Create Room</button>
+        <button class="secondary-btn" onclick="joinRoom()">Join Room</button>
+      </div>
+    </div>
+
+    <div id="chatPanel" class="chat hidden">
+      <div class="chat-header">
+        <span id="roomTitle"></span>
+        <button class="leave-btn" onclick="leaveRoom()">Leave</button>
+      </div>
+      <div id="chatBox" class="chat-box"></div>
+      <div class="input-area">
+        <input id="msg" placeholder="Type message...">
+        <button onclick="sendMessage()">🚀</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="users">
+    <h3>Users</h3>
+    <div id="usersContainer"></div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script src="firebase.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

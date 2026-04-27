@@ -1,5 +1,5 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCM0I06m42culO5wJScfy604uon9FnHceU",
+  String apiKey = System.getenv("API_KEY");
   authDomain: "chatozz-cdd01.firebaseapp.com",
   databaseURL: "https://chatozz-cdd01-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "chatozz-cdd01",
